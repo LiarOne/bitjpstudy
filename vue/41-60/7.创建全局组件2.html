@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue practice</title>
+    <script src="./JS/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <mycom2></mycom2>
+    </div>
+
+    <script>
+        //Vue.component第二个参数，既接收组件构造函数，也接收对象
+        Vue.component('mycom2',{
+            template: '<h2>直接使用Vue.component创建的组件</h2>'
+        })
+
+        const vm = new Vue({
+            el: '#app',
+            data: {},
+            methods: {},
+            filters: {},
+            directives: {},
+            created(){},
+            mounted(){}
+        })
+    </script>
+</body>
+
+</html>
