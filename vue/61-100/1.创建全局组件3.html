@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue practice</title>
+    <script src="./JS/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <mycom3></mycom3>
+        <mycom4></mycom4>
+    </div>
+
+    
+
+    <template id="tmpl">
+        <h3>这是在外界定义的组件UI结构</h3>
+    </template>
+
+    <script>
+        Vue.component('mycom3',{
+            template: '#tmpl'
+        })
+
+        const vm = new Vue({
+            el: '#app',
+            data: {},
+            methods: {},
+            components: {
+                'mycom4': {
+                    template: '<h6>这是定义的私有组件</h6>'
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
