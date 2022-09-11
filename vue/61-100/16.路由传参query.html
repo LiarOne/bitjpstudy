@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue practice</title>
+    <script src="./JS/vue.js"></script>
+    <script src="./JS/vue-router.js"></script>
+    <style>
+        .router-link-active {
+            color: red;
+            font-weight: bold;
+            font-style: italic;
+            font-size: 20px;
+            text-decoration: underline;
+        }
+        .v-enter,
+        .v-leave-to {
+            opacity: 0;
+            transform: translateX(100px);
+        }
+        .v-enter-active,
+        .v-leave-active {
+            transition: all 0.3s ease;
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <router-link to="/login?id=10">登录</router-link>
+        <router-link to="/reg">注册</router-link>
+        <transition>
+            <router-view></router-view>
+        </transition>
+    </div>
+
+    <script>
+        
+        const login = {
+            template: `<h3>登录组件----{{ $route.query.id }}</h3>`,
+            created(){
+                console.log(this.$route.query.id)
+            }
+        }
+        const reg = {
+            template: `<h3>注册组件</h3>`
+        }
+
+        const router = new VueRouter({
+            routes:[
+                //{path: '/',component: login},
+                {path: '/', redirect: '/login'},
+                {path: '/login',component: login},
+                {path: '/reg', component: reg}
+            ]
+        })
+        
+
+        const vm = new Vue({
+            el: '#app',
+            data: {},
+            methods: {},
+            router: router
+        })
+
+        
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue practice</title>
+    <script src="./JS/vue.js"></script>
+    <script src="./JS/vue-router.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        firstname: <input type="text" v-model="firstname"> + 
+        lastname: <input type="text" v-model="lastname"> = 
+        fullname: <input type="text" v-model="fullname">
+    </div>
+
+    <script>
+        
+        
+
+        const vm = new Vue({
+            el: '#app',
+            data: {
+                firstname:'',
+                lastname:'',
+                fullname:''
+            },
+            methods: {},
+            watch: {
+                //要监听的数据：数据变化时候的处理函数
+                'firstname': function(newval, oldval){
+                    //console.log(newval + '----' + oldval)
+                    this.fullname = newval + '-' + this.lastname
+                },
+                'lastname': function(newval,oldval){
+                    this.fullname = this.firstname + '-' + newval
+                }
+            }
+        })
+
+        
+    </script>
+</body>
+
+</html>

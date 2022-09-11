@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue practice</title>
+    <script src="./JS/vue.js"></script>
+    <script src="./JS/vue-router.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <router-link to='/login'>登录</router-link>
+        <router-link to='/reg'>注册</router-link>
+        <router-view></router-view>
+        <h3>{{ msg }}</h3>
+    </div>
+
+    <script>
+
+        const login = {
+            template: '<h1>登录组件</h1>'
+        }
+        const reg = {
+            template: '<h1>注册组件</h1>'
+        }
+        const router = new VueRouter({
+            routes: [
+                { path: '/login', component: login },
+                { path: '/reg', component: reg }
+            ]
+        })
+
+        const vm = new Vue({
+            el: '#app',
+            data: {
+                msg: '欢迎'
+            },
+            methods: {},
+            created() {
+                if (this.$route.path === '/login') {
+                    this.msg = '欢迎进入登录页面'
+                } else if (this.$route.path === '/reg') {
+                    this.msg = '欢迎进入注册页面'
+                }
+            },
+            router,
+            watch: { //watch可监听vm实例所有属性变化，页面刷新不会触发$router.path的改变
+                '$route.path': function (newval) {
+                    //console.log(newval)
+                    if (newval === '/login') {
+                        this.msg = '欢迎进入登录页面'
+                    } else if (newval === '/reg') {
+                        this.msg = '欢迎进入注册页面'
+                    }
+                }
+            }
+        })
+
+
+    </script>
+</body>
+
+</html>

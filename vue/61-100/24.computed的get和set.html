@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue practice</title>
+    <script src="./JS/vue.js"></script>
+    <script src="./JS/vue-router.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        firstname: <input type="text" v-model="firstname"> + 
+        lastname: <input type="text" v-model="lastname"> = 
+        fullname: <input type="text" v-model="fullname">
+    </div>
+
+    <script>
+
+        
+        const vm = new Vue({
+            el: '#app',
+            data: {
+                firstname:'',
+                lastname:''
+            },
+            methods: {},
+            computed: {
+                'fullname':{
+                    get(){
+                        //外界要引用fullname值
+                        return this.firstname + '-' + this.lastname
+                    },
+                    set(val){
+                        //外界重新为fullname赋值
+                        const parts = val.split('-')
+                        this.firstname = parts[0] || ''
+                        this.lastname = parts[1] || ''
+                    }
+                }
+            }
+        })
+
+
+    </script>
+</body>
+
+</html>
