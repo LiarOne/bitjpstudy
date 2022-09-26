@@ -67,6 +67,7 @@ namespace _02打开文件练习
         public void OpenFile()
         {
             ProcessStartInfo psi = new ProcessStartInfo(this.FilePath + "\\" + this.FileName);
+            psi.UseShellExecute = true;
             Process pro = new Process();
             pro.StartInfo = psi;
             pro.Start();

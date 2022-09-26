@@ -15,11 +15,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\wzh\\Desktop\\02打开文件练习\\02打开文件练习.csproj",
+      "projectUniqueName": "C:\\Users\\wzh\\Desktop\\bitjpstudy\\CS\\1-10\\02打开文件练习\\02打开文件练习.csproj",
       "projectName": "02打开文件练习",
-      "projectPath": "C:\\Users\\wzh\\Desktop\\02打开文件练习\\02打开文件练习.csproj",
+      "projectPath": "C:\\Users\\wzh\\Desktop\\bitjpstudy\\CS\\1-10\\02打开文件练习\\02打开文件练习.csproj",
       "packagesPath": "C:\\Users\\wzh\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\wzh\\Desktop\\02打开文件练习\\obj\\",
+      "outputPath": "C:\\Users\\wzh\\Desktop\\bitjpstudy\\CS\\1-10\\02打开文件练习\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
