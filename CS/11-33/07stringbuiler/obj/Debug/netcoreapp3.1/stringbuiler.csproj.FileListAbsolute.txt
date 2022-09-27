@@ -1,0 +1,13 @@
+C:\Users\wzh\source\repos\stringbuiler\bin\Debug\netcoreapp3.1\stringbuiler.exe
+C:\Users\wzh\source\repos\stringbuiler\bin\Debug\netcoreapp3.1\stringbuiler.deps.json
+C:\Users\wzh\source\repos\stringbuiler\bin\Debug\netcoreapp3.1\stringbuiler.runtimeconfig.json
+C:\Users\wzh\source\repos\stringbuiler\bin\Debug\netcoreapp3.1\stringbuiler.runtimeconfig.dev.json
+C:\Users\wzh\source\repos\stringbuiler\bin\Debug\netcoreapp3.1\stringbuiler.dll
+C:\Users\wzh\source\repos\stringbuiler\bin\Debug\netcoreapp3.1\stringbuiler.pdb
+C:\Users\wzh\source\repos\stringbuiler\obj\Debug\netcoreapp3.1\stringbuiler.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\wzh\source\repos\stringbuiler\obj\Debug\netcoreapp3.1\stringbuiler.AssemblyInfoInputs.cache
+C:\Users\wzh\source\repos\stringbuiler\obj\Debug\netcoreapp3.1\stringbuiler.AssemblyInfo.cs
+C:\Users\wzh\source\repos\stringbuiler\obj\Debug\netcoreapp3.1\stringbuiler.csproj.CoreCompileInputs.cache
+C:\Users\wzh\source\repos\stringbuiler\obj\Debug\netcoreapp3.1\stringbuiler.dll
+C:\Users\wzh\source\repos\stringbuiler\obj\Debug\netcoreapp3.1\stringbuiler.pdb
+C:\Users\wzh\source\repos\stringbuiler\obj\Debug\netcoreapp3.1\stringbuiler.genruntimeconfig.cache
