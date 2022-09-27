@@ -15,11 +15,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\wzh\\source\\repos\\stringbuiler\\stringbuiler.csproj",
+      "projectUniqueName": "C:\\Users\\wzh\\Desktop\\bitjpstudy\\CS\\11-33\\07stringbuiler\\stringbuiler.csproj",
       "projectName": "stringbuiler",
-      "projectPath": "C:\\Users\\wzh\\source\\repos\\stringbuiler\\stringbuiler.csproj",
+      "projectPath": "C:\\Users\\wzh\\Desktop\\bitjpstudy\\CS\\11-33\\07stringbuiler\\stringbuiler.csproj",
       "packagesPath": "C:\\Users\\wzh\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\wzh\\source\\repos\\stringbuiler\\obj\\",
+      "outputPath": "C:\\Users\\wzh\\Desktop\\bitjpstudy\\CS\\11-33\\07stringbuiler\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
