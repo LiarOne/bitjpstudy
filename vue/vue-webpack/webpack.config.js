@@ -31,8 +31,8 @@ module.exports = {
         ]
     },
     resolve: {
-        alias: {
-            'vue$': 'vue/dist/vue.js'
-        }
+        // alias: {
+        //     'vue$': 'vue/dist/vue.js'
+        // }
     }
 }
