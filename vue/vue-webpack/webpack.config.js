@@ -28,6 +28,7 @@ module.exports = {
             { test: /\.scss$/, use: ['style-loader','css-loader','sass-loader'] },
             //{ test: /\.jpg|png|gif|bmp$/, use: ['url-loader'] }  //limit表示图片大小，数值单位是byte，图片大小小于该值时，会被转为base64格式
             //{ test: /\.js$/, use: 'babel-loader', exclude:/node_modules/ }
+            { test: /\.vue$/, use: 'vue-loader' } //解析vue组件的第三方loader
         ]
     },
     resolve: {
