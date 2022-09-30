@@ -1,6 +1,7 @@
 <template>
     <div>
         <h3>哈哈哈哈</h3>
+        <mt-button type="primary">primary</mt-button>
         <router-link to="/login">登录</router-link>
         <router-link to="/reg">注册</router-link>
         <router-view></router-view>

@@ -35,6 +35,7 @@
     "webpack-dev-server": "^4.11.0"
   },
   "dependencies": {
+    "mint-ui": "^2.2.13",
     "vue": "^2.7.0",
     "vue-router": "^3.5.2"
   }
