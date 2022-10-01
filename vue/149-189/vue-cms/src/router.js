@@ -7,11 +7,13 @@ import SearchContainer from './components/tabbars/SearchContainer.vue'
 
 const router = new VueRouter({
     routes: [
+        { path: '/', redirect: '/home' },
         { path: '/home', component: HomeContainer },
         { path: '/member', component: MemberContainer },
         { path: '/shopcart', component: ShopcartContainer },
         { path: '/search', component: SearchContainer },
-    ]
+    ],
+    linkActiveClass: 'mui-active'
 })
 
 export default router
