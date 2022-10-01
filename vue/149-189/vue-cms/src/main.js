@@ -8,6 +8,11 @@ Vue.use(MintUI)
 import '../lib/mui/css/mui.min.css'
 import '../lib/mui/css/icons-extra.css'
 
+import axios from 'axios'
+Vue.prototype.$http = axios.create({
+    baseURL: 'http://39.106.32.91:3000'
+})
+
 import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 import router from './router.js'
