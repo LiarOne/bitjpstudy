@@ -52,4 +52,7 @@
 .v-leave-active {
     transition: all 0.4s ease;
 }
+.mint-header {
+    z-index: 99;
+}
 </style>
