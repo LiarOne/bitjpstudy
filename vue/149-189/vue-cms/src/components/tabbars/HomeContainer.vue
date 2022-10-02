@@ -54,7 +54,7 @@
                 if(data.status === 0) this.lunbotu = data.message;
             }
         }
-    }
+    };
 </script>
 
 <style lang="scss" scoped>
