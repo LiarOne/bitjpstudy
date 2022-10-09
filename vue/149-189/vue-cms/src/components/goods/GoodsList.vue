@@ -3,50 +3,22 @@
         <!--商品列表区域-->
         <div class="goods-list">
 
-            <div class="goods-item">
-                <img src="#" alt="">
-                <h1 class="title">小米note 16G双网通版</h1>
+            <div class="goods-item" v-for="item in goodslist" :key="item.id">
+                <img :src="item.img_url" alt="">
+                <h1 class="title">{{item.title}}</h1>
                 <div class="info">
                     <p class="price">
-                        <span class="new">¥2199</span>
-                        <span class="old">¥2699</span>
+                        <span class="new">¥ {{item.sell_price}}</span>
+                        <span class="old">¥ {{item.market_price}}</span>
                     </p>
                     <p class="sell">
                         <span>热卖中</span>
-                        <span>剩60件</span>
+                        <span>剩{{item.stock_quantity}}件</span>
                     </p>
                 </div>
             </div>
 
-            <div class="goods-item">
-                <img src="#" alt="">
-                <h1 class="title">小米note 16G双网通版</h1>
-                <div class="info">
-                    <p class="price">
-                        <span class="new">¥2199</span>
-                        <span class="old">¥2699</span>
-                    </p>
-                    <p class="sell">
-                        <span>热卖中</span>
-                        <span>剩60件</span>
-                    </p>
-                </div>
-            </div>
-
-            <div class="goods-item">
-                <img src="#" alt="">
-                <h1 class="title">小米note 16G双网通版</h1>
-                <div class="info">
-                    <p class="price">
-                        <span class="new">¥2199</span>
-                        <span class="old">¥2699</span>
-                    </p>
-                    <p class="sell">
-                        <span>热卖中</span>
-                        <span>剩60件</span>
-                    </p>
-                </div>
-            </div>
+            <mt-button type="danger" size="large" style="margin-top:10px;" @click="getMore">加载更多</mt-button>
 
         </div>
     </div>
@@ -55,9 +27,30 @@
 <script>
 export default {
     data(){
-        return {}
+        return {
+            page:1,
+            goodslist:[]
+        }
     },
-    methods: {}
+    created(){
+        this.getGoodsListByPage();
+    },
+    methods: {
+        async getGoodsListByPage(){
+            const {data} = await this.$http.get("/api/getgoods?pageindex="+this.page);
+            if(data.status===0){
+                if(data.message.length<=0){ //当获取到的数组长度为0，表示数据已加载完
+                    this.isloaded=true; //表示没有新数据了
+                }
+                this.goodslist=this.goodslist.concat(data.message);
+            }
+        },
+        getMore(){
+            if(this.isloaded) return; //如果数据加载完，直接return
+            this.page++;
+            this.getGoodsListByPage();
+        }
+    }
 }
 </script>
 
@@ -74,8 +67,12 @@ export default {
         margin-top: 7px;
         box-shadow: 0 0 7px #ccc;
         padding: 2px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
         img{
             width: 100%;
+            min-height: 170px;
         }
         .title{
             font-size: 15px;
