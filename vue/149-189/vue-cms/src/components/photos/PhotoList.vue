@@ -12,13 +12,13 @@
 
 		</div>
         <ul class="lazyul">
-            <li v-lazy="item in photolist" :key="item.id">
+            <router-link tag='li' v-lazy="item in photolist" :key="item.id" :to="'/home/photoinfo/'+item.id">
                 <img v-lazy="item.img_url">
                 <div class="info">
                     <h1 class="info-title">{{item.title}}</h1>
                     <div class="info-content">{{item.zhaiyao}}</div>
                 </div>
-            </li>
+            </router-link>
         </ul>
 
     </div>
