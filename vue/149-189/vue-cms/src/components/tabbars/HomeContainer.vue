@@ -6,6 +6,7 @@
                 <img :src="item.img" alt="">
             </mt-swipe-item>
         </mt-swipe>
+        <!--九宫格区域-->
         <ul class="mui-table-view mui-grid-view mui-grid-9">
 		            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><router-link to="/home/newslist">
 		                    <span class="mui-icon mui-icon-home"></span>
