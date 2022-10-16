@@ -98,6 +98,7 @@ export default {
         },
         addToCart(){
             this.flag = !this.flag;
+            this.$store.commit('addToCar', { id: this.id, count: this.selectedCount, selected: true});
         },
         beforeEnter(el){
             el.style.transform = "translate(0,0)";
@@ -109,7 +110,7 @@ export default {
             const left = badgePos.left - ballPos.left;
             const top = badgePos.top - ballPos.top;
 
-            el.style.transform = "translate("+left+"px,"+top+"px)";
+            el.style.transform = "translate(" + left + "px," + top + "px)";
             el.style.transition = "all 1s cubic-bezier(.46,-0.4,1,.49)"; //cubic-bezier贝塞尔曲线
             done();
         },

@@ -8,7 +8,7 @@ const optimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 module.exports = {
     entry: {
         app: path.join(__dirname, './src/main.js'), // 入口，表示，要使用 webpack 打包哪个文件
-        vendors: ['jquery']//这是第三方包的名称
+        vendors: ['vue','vuex','vue-router','axios','mint-ui','vue2-preview']//这是第三方包的名称
     },
     output: { // 输出文件相关的配置
         path: path.join(__dirname, './dist'), // 指定 打包好的文件，输出到哪个目录中去
@@ -68,6 +68,7 @@ module.exports = {
             }) },
             //{ test: /\.jpg|png|gif|bmp$/, use: ['url-loader'] }  //limit表示图片大小，数值单位是byte，图片大小小于该值时，会被转为base64格式
             //{ test: /\.js$/, use: 'babel-loader', exclude:/node_modules/ }
+            { test: /\.vue$/, use: 'vue-loader' }
         ]
     }
 }

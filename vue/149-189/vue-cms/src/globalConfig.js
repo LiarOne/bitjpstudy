@@ -9,7 +9,7 @@ import '../lib/mui/css/icons-extra.css'
 
 import './filters.js'
 
-import VuePreview from 'vue-preview'
+import VuePreview from 'vue2-preview'
 Vue.use(VuePreview)
 
 import axios from 'axios'
