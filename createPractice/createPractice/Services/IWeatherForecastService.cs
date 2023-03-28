@@ -15,7 +15,7 @@ namespace createPractice.Services
         /// 检索全部数据
         /// </summary>
         /// <returns></returns>
-        public List<InfoEntity> SearchAll();
+        public IEnumerable<InfoEntity> SearchAll();
 
         /// <summary>
         /// 根据user id检索数据

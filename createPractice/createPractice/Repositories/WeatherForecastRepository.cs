@@ -1,36 +1,42 @@
 ﻿using createPractice.Entity;
+using Npgsql;
+using System.Data;
+using Dapper;
 
 namespace createPractice.Repositories
 {
     public class WeatherForecastRepository: IWeatherForecastRepository
     {
+        public readonly string connectionString;
+        public WeatherForecastRepository()
+        {
+            this.connectionString = "Server=localhost;Port=5432;User Id=postgres;Password=123456;Database=postgres";
+        }
+        public IDbConnection Connection
+        {
+            get { return new NpgsqlConnection(this.connectionString);}
+        }
+
         public InfoEntity Register(InfoEntity userInfo)
         {
             userInfo.userId = Guid.NewGuid().ToString("N");
-            userInfo.registerTime = DateTime.Now.ToString();
+            userInfo.registerTime = DateTime.Now;
             return userInfo;
         }
-
-        public List<InfoEntity> SearchAll()
+        
+        public IEnumerable<InfoEntity> SearchAll()
         {
-            InfoEntity registerInfo = new InfoEntity();
-            registerInfo.userId = Guid.NewGuid().ToString("N");
-            registerInfo.userName = "searchAll111";
-            registerInfo.userAge = "123";
-            registerInfo.registerTime = DateTime.Now.ToString();
+            var builder = new SqlBuilder();
+            builder
+                .Select("MU.user_id")
+                .Select("MU.user_name")
+                .Select("MU.user_age")
+                .Select("MU.register_time");
 
-            InfoEntity registerInfo2 = new InfoEntity();
-            registerInfo2.userId = Guid.NewGuid().ToString("N");
-            registerInfo2.userName = "searchAll222";
-            registerInfo2.userAge = "456";
-            registerInfo2.registerTime = DateTime.Now.ToString();
-
-            List<InfoEntity> searchInfo = new List<InfoEntity>();
-
-            searchInfo.Add(registerInfo);
-            searchInfo.Add(registerInfo2);
-
-            return searchInfo;
+            var builderTemplate = builder.AddTemplate("select /**select**/ from m_user MU");
+            using IDbConnection dbConnection = this.Connection;
+            dbConnection.Open();
+            return dbConnection.Query<InfoEntity>(builderTemplate.RawSql, builderTemplate.Parameters);
         }
 
         public InfoEntity SearchById(string userId)
@@ -38,8 +44,8 @@ namespace createPractice.Repositories
             InfoEntity searchInfo = new InfoEntity();
             searchInfo.userId = userId;
             searchInfo.userName = "userNameById";
-            searchInfo.userAge = "789";
-            searchInfo.registerTime = DateTime.Now.ToString();
+            searchInfo.userAge = 789;
+            searchInfo.registerTime = DateTime.Now;
 
             return searchInfo;
         }

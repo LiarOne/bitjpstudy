@@ -4,7 +4,7 @@
     {
         public string? userId { get; set; }
         public string? userName { get; set; }
-        public string? userAge { get; set; }
-        public string? registerTime { get; set; }
+        public int? userAge { get; set; }
+        public DateTime? registerTime { get; set; }
     }
 }

@@ -16,7 +16,7 @@ namespace createPractice.Services
             return result;
         }
 
-        public List<InfoEntity> SearchAll()
+        public IEnumerable<InfoEntity> SearchAll()
         {
             var result = this.weatherForecastRepository.SearchAll();
             return result;

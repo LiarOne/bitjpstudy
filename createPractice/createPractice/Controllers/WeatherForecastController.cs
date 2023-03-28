@@ -52,7 +52,7 @@ namespace createPractice.Controllers
         }
 
         [HttpGet]
-        public List<InfoEntity> SearchAll()
+        public IEnumerable<InfoEntity> SearchAll()
         {
             var result = this.weatherForecastService.SearchAll();
             return result;
