@@ -9,6 +9,8 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddTransient<IWeatherForecastService, WeatherForecastService>();
 builder.Services.AddTransient<IWeatherForecastRepository, WeatherForecastRepository>();
 
+Dapper.DefaultTypeMap.MatchNamesWithUnderscores = true;
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
