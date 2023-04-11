@@ -1,4 +1,5 @@
-﻿using createPractice.Entity;
+﻿using Autofac.Extras.DynamicProxy;
+using createPractice.Entity;
 using createPractice.Repositories;
 
 namespace createPractice.Services

@@ -1,7 +1,10 @@
-﻿using createPractice.Entity;
+﻿using Autofac.Extras.DynamicProxy;
+using createPractice.AOP;
+using createPractice.Entity;
 
 namespace createPractice.Repositories
 {
+    [Intercept(typeof(LoggingInterceptor))]
     public interface IWeatherForecastRepository
     {
         public InfoEntity Register(InfoEntity userInfo);

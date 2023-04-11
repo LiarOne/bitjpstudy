@@ -11,6 +11,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="8.0.0" />
+    <PackageReference Include="Autofac.Extras.DynamicProxy" Version="6.0.1" />
+    <PackageReference Include="Castle.Core" Version="5.1.1" />
     <PackageReference Include="Dapper" Version="2.0.123" />
     <PackageReference Include="Dapper.SqlBuilder" Version="2.0.78" />
     <PackageReference Include="Microsoft.AspNetCore.SpaProxy" Version="6.0.10" />

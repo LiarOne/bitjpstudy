@@ -1,7 +1,9 @@
-﻿using createPractice.Entity;
+﻿using Autofac.Extras.DynamicProxy;
+using createPractice.Entity;
 
 namespace createPractice.Services
 {
+    [Intercept(typeof(LoggingInterceptor))]
     public interface IWeatherForecastService
     {
         /// <summary>

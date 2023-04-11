@@ -1,4 +1,5 @@
-﻿using createPractice.Entity;
+﻿using Autofac.Extras.DynamicProxy;
+using createPractice.Entity;
 using createPractice.Services;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;

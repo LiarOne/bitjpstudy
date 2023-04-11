@@ -73,6 +73,21 @@
         ],
       }
     },
+    watch:{
+        registerDialogFlag(){
+            if(!this.registerDialogFlag){
+                this.searchAll()
+            }
+        },
+        editDialogFlag(){
+            if(!this.editDialogFlag){
+                this.searchAll()
+            }
+        },
+    },
+    mounted(){
+        this.searchAll()
+    },
     methods: {
       searchAll(){
         const self = this

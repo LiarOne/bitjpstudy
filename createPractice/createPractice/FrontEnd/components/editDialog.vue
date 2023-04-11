@@ -105,7 +105,6 @@ export default {
                 console.log('userAge: '+ response.data.userAge)
                 console.log('registerTime: '+ response.data.registerTime)
                 self.dialogFlag=false
-                this.$emit('dataChanged')
               })
               .catch(function (error){
                 console.log('edit failed:', error)
@@ -121,7 +120,6 @@ export default {
               .then((response)=>{
                 console.log('delete result: '+ response.data)
                 self.dialogFlag=false
-                this.$emit('dataChanged')
               })
               .catch(function (error){
                 console.log('edit failed:', error)
